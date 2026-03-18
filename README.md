@@ -16,34 +16,34 @@ This project combines **classical computer vision** (Canny edge detection + Houg
 ## 🧠 How It Works
 
 ```
-Input Video
-    │
-    ▼
+    Input Video
+         │
+         ▼
 ┌─────────────────────┐
 │  Canny Edge + ROI   │  ← Grayscale → Gaussian Blur → Canny → Masked Region
 └────────┬────────────┘
          │
-    ▼
+         ▼
 ┌─────────────────────┐
 │   Hough Transform   │  ← Detects left/right lane lines by slope
 └────────┬────────────┘
          │
-    ▼
+         ▼
 ┌─────────────────────┐
 │  Lane Fill Polygon  │  ← Fills detected lane with green overlay (0.3 alpha)
 └────────┬────────────┘
          │
-    ▼
+         ▼
 ┌─────────────────────┐
 │  YOLOv8 Detection   │  ← Detects nearby hazards in lower 40% of frame
 └────────┬────────────┘
          │
-    ▼
+         ▼
 ┌─────────────────────┐
 │  Command Decision   │  ← Deviation from center → LEFT/RIGHT/STRAIGHT/STOP
 └─────────────────────┘
          │
-    ▼
+         ▼
 Output Annotated Video
 ```
 
